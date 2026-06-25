@@ -1,0 +1,24 @@
+/* Global card styles */
+.card {
+  @apply bg-white rounded-3xl shadow-2xl p-8 border border-gray-100;
+}
+
+/* Form input styles */
+.form-input {
+  @apply w-full px-4 py-3 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all shadow-sm;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3 px-6 rounded-2xl transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+}
+
+.btn-success {
+  @apply bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-8 rounded-2xl transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1;
+}
+
+/* QR Container */
+.qr-container {
+  @apply bg-gradient-to-b from-green-50 to-emerald-50 p-6 rounded-2xl shadow-lg border-2 border-green-200;
+}
+
