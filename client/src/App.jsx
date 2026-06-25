@@ -3,6 +3,8 @@ import AddBus from "./pages/AddBus"
 import Scanner from "./components/Scanner"
 import LiveMap from "./pages/LiveMap"
 import DriverSimulation from "./pages/DriverSimulation"
+import AdminLogin from "./pages/AdminLogin"
+import AdminDashboard from "./pages/AdminDashboard"
 import { useState, useEffect } from "react"
 
 function Navbar() {
@@ -61,6 +63,16 @@ function Navbar() {
             >
               Simulate
             </Link>
+            <Link 
+              to="/admin/dashboard" 
+              className={`px-5 py-2.5 rounded-xl font-bold transition-all duration-300 ml-4 ${
+                location.pathname.startsWith('/admin')
+                  ? 'bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg shadow-gray-900/30' 
+                  : 'text-gray-800 hover:bg-gray-100 border border-gray-200 shadow-sm hover:shadow-md'
+              }`}
+            >
+              Admin
+            </Link>
           </div>
         </div>
       </div>
@@ -82,6 +94,8 @@ function AppContent() {
           <Route path="/scan" element={<Scanner/>}/>
           <Route path="/map" element={<LiveMap/>}/>
           <Route path="/simulate" element={<DriverSimulation/>}/>
+          <Route path="/admin/login" element={<AdminLogin/>}/>
+          <Route path="/admin/dashboard" element={<AdminDashboard/>}/>
         </Routes>
       </main>
     </div>

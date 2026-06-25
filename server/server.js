@@ -7,6 +7,7 @@ const busRoutes = require("./routes/busRoutes")
 const scanRoutes = require("./routes/scanRoutes")
 const logRoutes = require("./routes/logRoutes")
 const locationRoutes = require("./routes/locationRoutes")
+const authRoutes = require("./routes/authRoutes")
 
 const app = express()
 
@@ -22,6 +23,7 @@ app.use("/bus", busRoutes)
 app.use("/scan", scanRoutes)
 app.use("/logs", logRoutes)
 app.use("/location", locationRoutes)
+app.use("/auth", authRoutes)
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT,()=>{
