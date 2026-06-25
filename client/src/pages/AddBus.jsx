@@ -19,8 +19,9 @@ function AddBus(){
     setError("")
     
     try{
-      await axios.post("http://localhost:5000/bus/add",{
-       busNumber,
+      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000"
+      await axios.post(`${API_URL}/bus/add`,{
+        busNumber,
        route,
        qrCode: busNumber
       })

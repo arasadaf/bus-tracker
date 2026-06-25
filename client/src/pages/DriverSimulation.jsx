@@ -18,7 +18,8 @@ export default function DriverSimulation() {
   useEffect(() => {
     const fetchBuses = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/location/all');
+        const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000"
+        const response = await axios.get(`${API_URL}/location/all`);
         setBuses(response.data);
       } catch (err) {
         console.error("Error fetching buses", err);
@@ -33,7 +34,8 @@ export default function DriverSimulation() {
       interval = setInterval(async () => {
         const coord = mockRoute[currentStep];
         try {
-          await axios.put(`http://localhost:5000/location/${selectedBus}`, {
+          const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000"
+          await axios.put(`${API_URL}/location/${selectedBus}`, {
             lat: coord[0],
             lng: coord[1]
           });
